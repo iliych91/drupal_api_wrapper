@@ -1,0 +1,4 @@
+name: Api Wrapper
+description: 'Module that provides an API wrapper to wrap any service that embeds an API as callable route.'
+core_version_requirement: ^9.0 || ^10.0 || ^11.0
+type: module

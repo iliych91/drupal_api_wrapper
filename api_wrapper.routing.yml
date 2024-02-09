@@ -1,0 +1,2 @@
+route_callbacks:
+  - '\Drupal\api_wrapper\Routing\ApiWrapperRoutesProvider::routes'

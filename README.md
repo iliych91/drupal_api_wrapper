@@ -22,10 +22,19 @@ class SoccerApi {
 }
 ```
 
-The module will scan all services marked with the #[ApiWrap] attribute, using the value expressed for basePath as the base endpoint.
-Once all services to be wrapped are identified, it will proceed to scan the methods that have been defined as #[Endpoint]. For each of these, it will generate Route objects, collect them in a RouteCollection, and then register them in the Drupal routes registry.
+The module will scan all services marked with the `#[ApiWrap]` attribute, using the value expressed for basePath as the base endpoint.
+Once all services to be wrapped are identified, it will proceed to scan the methods that have been defined as `#[Endpoint]`. For each of these, it will generate Route objects, collect them in a RouteCollection, and then register them in the Drupal routes registry.
 
 In the case of the example, a single dynamic route will be generated, or rather two. This is because the getBestTeam method accepts a parameter with a default value. In this case, it will be possible to call the route in two ways:
 
 - `GET /soccer-api/favourite-team`: which for Drupal will simply be a call to getBestTeam('Italy').
 - `GET /soccer-api/favourite-team/{state}`: in this case, the value of the $state parameter in the URL will vary.
+
+**Attributes**
+- `ApiWrap`
+  - `basePath`: `<string>`
+- `Endpoint`
+  - `method`: `GET`|`POST`|...
+  - `path`: `<string>`
+  - `label`: `<string>`
+  - `description`: `<string>`
